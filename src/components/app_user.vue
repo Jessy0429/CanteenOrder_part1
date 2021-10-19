@@ -6,8 +6,9 @@
     </el-header>
     <el-container height="100%" direction="horizontal">
       <el-aside>
-        <el-menu class="el-menu-vertical-demo">
-<!--                 @select="handleSelect">-->
+        <el-menu class="el-menu-vertical-demo"
+                 @select="handleSelect"
+                  default-active="0">
           <el-menu-item class="el-submenu" index="0">
             <i class="el-icon-tableware"></i>
             <span>首页</span>
@@ -16,7 +17,7 @@
             <i class="el-icon-s-claim"></i>
             <span>我的订单</span>
           </el-menu-item>
-          <el-menu-item class="el-submenu" index="1">
+          <el-menu-item class="el-submenu" index="2">
             <i class="el-icon-user"></i>
             <span>个人中心</span>
           </el-menu-item>
@@ -31,7 +32,30 @@
 
 <script>
 export default {
-  name: "main_order"
+  name: "app_user",
+  data(){
+    return {
+      clickType: NaN,
+      clickPath: undefined,
+    }
+  },
+  methods:{
+    handleSelect(key, keyPath) {
+      this.clickType = 'updateClickType';
+      this.clickPath = keyPath;
+      // this.$store.commit('updateClickType', keyPath);
+      if(keyPath[0] == '0') this.clickType = 'showMainPage';
+      else if(keyPath[0] == '1') this.clickType = 'showOrdersPage';
+      else if(keyPath[0] == '2') this.clickType = 'showUserPage';
+      // if(keyPath[0] === "5" || keyPath[0] === "8") {
+      //   this.$store.commit('showMainGraph', true);
+      // }
+      // else {
+      //   this.$store.commit('showMainGraph', false);
+      console.log(this.clickType, this.clickPath)
+      }
+
+  }
 }
 </script>
 

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import main_order from '@/components/main_order'
+import app_user from '@/components/app_user'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'main_order',
-      component: main_order
+      name: 'app_user',
+      component: app_user
     }
   ]
 })
