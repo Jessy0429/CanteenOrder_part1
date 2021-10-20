@@ -4,18 +4,18 @@
       <el-collapse-item>
         <template slot="title">
           <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" :size="60"></el-avatar>
-          <span>Username</span>
+          <span style="margin-left: 20px">Username</span>
         </template>
         <el-descriptions :column="2" class="margin-top">
-          <el-descriptions-item label="用户名" :labelStyle="{'vertical-align': 'middle'}">
-            <span>{{this.username}}</span>
+          <el-descriptions-item label="用户名" :labelStyle="{'line-height': '50px'}" :contentStyle="{'line-height': '50px'}">
+            <span style="margin-right: 10px">{{this.username}}</span>
             <el-button size="mini" @click="dialogVisible = true; dialogID = 0">修改</el-button>
           </el-descriptions-item>
-          <el-descriptions-item label="手机号">
-            <span>{{this.telnumber}}</span>
+          <el-descriptions-item label="手机号" :labelStyle="{'line-height': '50px'}" :contentStyle="{'line-height': '50px'}">
+            <span style="margin-right: 10px">{{this.telnumber}}    </span>
             <el-button size="mini" @click="dialogVisible = true; dialogID = 1">修改</el-button>
           </el-descriptions-item>
-          <el-descriptions-item label="密码">
+          <el-descriptions-item label="密码" :labelStyle="{'line-height': '50px'}" :contentStyle="{'line-height': '50px'}">
             <el-button size="mini" @click="dialogVisible = true; dialogID = 2">修改密码</el-button>
           </el-descriptions-item>
         </el-descriptions>
@@ -32,7 +32,6 @@
       </el-dialog>
     </div>
   </div>
-
 </template>
 
 <script>
