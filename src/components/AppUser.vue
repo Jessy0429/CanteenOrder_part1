@@ -24,7 +24,7 @@
         </el-menu>
       </el-aside>
       <el-main>
-        <span>main</span>
+        <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -44,9 +44,18 @@ export default {
       this.clickType = 'updateClickType';
       this.clickPath = keyPath;
       // this.$store.commit('updateClickType', keyPath);
-      if(keyPath[0] == '0') this.clickType = 'showMainPage';
-      else if(keyPath[0] == '1') this.clickType = 'showOrdersPage';
-      else if(keyPath[0] == '2') this.clickType = 'showUserPage';
+      if(keyPath[0] == '0') {
+        this.clickType = 'showMainPage';
+        this.$router.push({name:'usermain'});
+      }
+      else if(keyPath[0] == '1') {
+        this.clickType = 'showOrdersPage';
+        this.$router.push({name:'userorders'});
+      }
+      else if(keyPath[0] == '2') {
+        this.clickType = 'showUserPage';
+        this.$router.push({name:'userinfo'});
+      }
       // if(keyPath[0] === "5" || keyPath[0] === "8") {
       //   this.$store.commit('showMainGraph', true);
       // }
