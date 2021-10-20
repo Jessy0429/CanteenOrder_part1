@@ -83,7 +83,7 @@ export default {
   font-size: 30px;
 
 }
-.el-aside {
+.el-aside{
   text-align: center;
   width: 200px;
   font-family: 'Hiragino Sans GB';
