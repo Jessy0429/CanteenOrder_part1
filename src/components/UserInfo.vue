@@ -30,11 +30,12 @@
             <template slot="extra">
               <el-switch v-model="DeliveredInfo.isdefault" active-text="设为默认" @change="ChangeDefault(index)"></el-switch>
             </template>
-            <el-descriptions-item>
-                <span>{{DeliveredInfo.Address}}</span>
-                <el-button icon="el-icon-edit" circle align="right" @click="dialogVisible = true; dialogID = 3; edit_index = index"></el-button>
+            <el-descriptions-item content-style="width: 100%">
+              <el-row>
+                <el-col :span="12" style="line-height: 40px"><span>{{DeliveredInfo.Address}}</span></el-col>
+                <el-col :span="12" style="text-align: right"><el-button icon="el-icon-edit" circle align="right" @click="dialogVisible = true; dialogID = 3; edit_index = index"></el-button></el-col>
+              </el-row>
             </el-descriptions-item>
-
           </el-descriptions>
         </div>
       </el-collapse-item>
