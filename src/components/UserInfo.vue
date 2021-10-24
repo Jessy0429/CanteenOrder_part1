@@ -117,6 +117,9 @@ export default {
       DeliveredInfos:[{Consignee:'周楠', Telephone:'13823367491', Address:'荔园八栋2504A', isdefault:true},{Consignee:'王子烨', Telephone:'13713989126', Address:'荔园四栋205', isdefault:false}]
     }
   },
+  mounted() {
+    this.GetData();
+  },
   methods: {
     updateInfo(){
       if (this.dialogID === 0){
@@ -150,7 +153,17 @@ export default {
       for (let i = 0;i < this.DeliveredInfos.length; i++){
         if (i != index) this.DeliveredInfos[i].isdefault = false;
       }
-
+    },
+    GetData(){
+      // 使用 axios 向 flask 发送请求
+      const url = "http://127.0.0.1:5000/api/user";
+      this.axios.get(url)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
     }
   }
 }
